@@ -173,7 +173,7 @@ function GameStart(){
     consIndex = 5
     randomIndex = [0,1,2,3,4,5]
     document.getElementsByClassName("startButton")[0].style.display = "none"
-
+    document.body.style.opacity = "1"
     for(let i = 5; i > -1; i--){
         let random = Math.floor(Math.random()*i) 
         newIndexes.unshift(randomIndex[random])
@@ -530,7 +530,7 @@ function SubmitButton(){
     }
 
 
-    if(row1 == 4 || col == true){
+    if(row1 == 4){
         row1 = true
         if(row1 == true){
             guess = ""
@@ -538,9 +538,8 @@ function SubmitButton(){
                 guess += tiles[i].textContent
             }
             checkAnswerPerTile(1)
-            col = false
         } 
-    } else if(row2 == 9 || col == true){
+    } else if(row2 == 9){
         row2 = true
         if(row2 == true){
             guess = ""
@@ -548,9 +547,8 @@ function SubmitButton(){
                 guess += tiles[i].textContent
             }
             checkAnswerPerTile(2)
-            col = false
         }
-    } else if(row3 == 14 || col == true){
+    } else if(row3 == 14){
         row3 = true
         if(row3 == true){
             guess = ""
@@ -558,9 +556,8 @@ function SubmitButton(){
                 guess += tiles[i].textContent
             }
             checkAnswerPerTile(3)
-            col = false
         }
-    } else if(row4 == 19 || col == true){
+    } else if(row4 == 19){
         row4 = true
         if(row4 == true){
             guess = ""
@@ -568,9 +565,8 @@ function SubmitButton(){
                 guess += tiles[i].textContent
             }
             checkAnswerPerTile(4)
-            col = false
         }
-    } else if(row5 == 24 || col == true){
+    } else if(row5 == 24){
         row5 = true
         if(row5 == true){
             guess = ""
@@ -578,16 +574,14 @@ function SubmitButton(){
                 guess += tiles[i].textContent
             }
             checkAnswerPerTile(5)
-            col = false
         }
-    }   else if(row6 == 29 || col == true){
+    }   else if(row6 == 29){
         guess = ""
             for(let i = 25; i < 30; i++){
                 guess += tiles[i].textContent
             }
             checkAnswerPerTile(6)
             gameOver()
-            col = false
     }  
 
 
@@ -712,7 +706,7 @@ function SubmitButton(){
 function KeyBoardColor(){
     r = renewR
     while(r != maximum){
-        for(let l = 0; l < 27; l++){
+        for(let l = 0; l < 28; l++){
             if(tiles[r].style.backgroundColor == "green"){
                 if(tiles[r].textContent.toLowerCase() == keyboardKeys[l].textContent){
                     keyboardKeys[l].style.backgroundColor = "green"
@@ -779,7 +773,7 @@ function NextWord(){
     }
     newIndexes.splice(0,1)
     for(let q = 0; q < 30 ; q++){
-        if(q < 25){
+        if(q < 28){
             keyboardKeys[q].style.backgroundColor = "#baa8a8"
         }
         tiles[q].textContent = ""
@@ -791,7 +785,7 @@ function NextWord(){
             tiles[q].classList.remove("turnYellow")
         } else if(tiles[q].classList.contains("turnGrey")){
             tiles[q].classList.remove("turnGrey")
-        } else { console.log("") }
+        } 
     }
 }
 
@@ -805,11 +799,13 @@ function gameOver(){
         
     setTimeout(() => {
         if(!GameRunning && !keys){
+            document.body.style.opacity = ".5"
             document.getElementsByClassName("startButton")[0].style.display = "block"
+            document.getElementsByClassName("startButton")[0].style.opacity = "1"
             document.getElementById("Score").textContent = "Score: 0"
             alert("You Lose! The Word is: " + word)
             for(let i = 0; i < 30; i++){
-                if(i < 28){
+                if(i < 29){
                     keyboardKeys[i].style.backgroundColor = "#baa8a8"
                 }
                 tiles[i].textContent = ""
