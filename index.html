@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="🥵">
 <head>
-    <title>Document</title>
+    <title>Wordle Ni Bry &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="header">
+        <div id="headWordle"></div>
+    </div>
+    
+    <div class="heading">
+        <div class="gold-icon"></div> <label for="gold-icon" id="gold-text">0 gold</label>
+        <button id="hintButton" onclick="Hint()">Take A Hint</button>
+    </div>
     <h1 id="Score">Score: 0</h1>
+
     <div class="main-container">
         <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: #34342e; text-decoration: underline; text-align: center;">WORDLE</h1>
         <button class="startButton" onclick="GameStart()">Start</button>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
         <div class="row">
             <div class="col"></div>
             <div class="col"></div>
@@ -84,11 +100,18 @@
             <li class="keys" onclick="KeyboardKeys('m')">m</li>
         </ul>
     </div>
+
+    <div id="hint-box">
+        <h2 id="hint-alert">Will You Take A Hint?
+            It Will Cost  <div class="gold-icon" id="gold-icon" ></div> 20 gold.
+        </h2>
+
+        <div class="yes-no">
+            <button id="yes" onclick="hintOption(1)">Yes</button>
+            <button id="no" onclick="hintOption(0)">No</button>
+        </div>
+    </div>
     <script src="index.js"></script>
-    <script type="module">
-        import fs from 'node:fs';
-        import {writeFileSync} from 'node:fs'
-        fs.writeFileSync("input.json", '["gold":100]', "utf-8")   
-    </script>
+    
 </body>
 </html>
