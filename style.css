@@ -26,18 +26,19 @@ li:active, button:active{
 }
 .header{
     width: 100%;
-    height: 120px;
+    height: 150px;
     background-color: green;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px; 
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 #headWordle{
     background-image: url('Wordle.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 80% 200%;
+    background-size: 80% 500%;
     width: 90%;
     height: 120px;
 }
@@ -211,8 +212,8 @@ li:active, button:active{
     background-color: #baa8a8;
     border: 3px solid #392f2f;
     border-radius: 10px;
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     text-align: center;
     display: flex;
     align-items: center;
