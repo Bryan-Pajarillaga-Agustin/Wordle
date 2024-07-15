@@ -805,7 +805,7 @@ function gameOver(){
             document.getElementById("Score").textContent = "Score: 0"
             alert("You Lose! The Word is: " + word)
             for(let i = 0; i < 30; i++){
-                if(i < 29){
+                if(i < 28){
                     keyboardKeys[i].style.backgroundColor = "#baa8a8"
                 }
                 tiles[i].textContent = ""
