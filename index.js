@@ -570,7 +570,7 @@ function SubmitButton(){
         row5 = true
         if(row5 == true){
             guess = ""
-            for(let i = 219; i < 24; i++){
+            for(let i = 20; i < 25; i++){
                 guess += tiles[i].textContent
             }
             checkAnswerPerTile(5)
