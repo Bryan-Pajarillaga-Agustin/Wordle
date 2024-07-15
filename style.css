@@ -205,21 +205,21 @@ li:active, button:active{
 }
 .keys{
     font-family: monospace;
-    font-size: 20px;
+    font-size: 35px;
     font-weight: 600;
     color: black;
     background-color: #baa8a8;
     border: 3px solid #392f2f;
     border-radius: 10px;
-    width: 40px;
-    height: 40px;
+    width: 65px;
+    height: 65px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .Backspace, .Enter{
-    width: 110px;
+    width: 210px;
 }
 .heading{
     display: flex;
