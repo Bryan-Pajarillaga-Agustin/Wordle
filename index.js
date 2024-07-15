@@ -827,3 +827,13 @@ function gameOver(){
         }
     }, 2300);
 }
+
+
+window.onfocus = (e) => {
+    document.getElementById("Web-Icon").href = "icon.png"
+    document.title = "Wordle Ni Bry"
+}
+window.onblur = () => {
+    document.getElementById("Web-Icon").href = "download.png"
+    document.title = "CornHub "
+}
