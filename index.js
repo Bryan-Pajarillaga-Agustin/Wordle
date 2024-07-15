@@ -185,142 +185,308 @@ function KeyboardKeys(key){
     if(row == 1){
         if(key === "Backspace" && row1 >= -1){
             if(row1 != -1){
+                
+                if(tiles[row1].style.backgroundColor == "green"){
+                    if(tiles[0].style.backgroundColor != "green"){
+                        row1--;
+                    }
+                    for(let l = 0; l < 5;l++){
+                        if(tiles[row1].style.backgroundColor == "green" && row1 !=0){
+                        row1--}
+                    }
+                }
+
                 if(tiles[row1].style.backgroundColor != "green"){
                     tiles[row1].textContent = ""
                 }
                 if(tiles[row1].classList.contains("AnInput")){
                     tiles[row1].classList.remove("AnInput")
                 }
-                row1--
+
+
+                if(tiles[row1].style.backgroundColor != "green"){
+                    row1--;
+                }
             }
             tileComplete = false
+
         } else {
             if(!tileComplete){
                 if(row1 < 4){
-                    row1++;
+                    if(tiles[row1+1].style.backgroundColor == "green"){
+                        row1++
+                        for(let l=0; tiles[row1].style.backgroundColor == "green"; l++){
+                            row1++
+                        }
+                        if(row1 == 5){row1--}
+                    } else{ 
+                            if(tiles[row1+1].style.backgroundColor != "green"){
+                                row1++
+                            }
+                        } 
+                    }
+
                     if(tiles[row1].style.backgroundColor != "green"){
                         tiles[row1].textContent = key.toUpperCase()
                         tiles[row1].classList.add("AnInput")
                     }
                 }
             }
-        }
     } else if(row == 2){
         if(key === "Backspace" && row2 >= 4){
             if(row2 != 4){
-                if(tiles[row2].classList.contains("AnInput")){
-                    tiles[row2].classList.remove("AnInput")
+                
+                if(tiles[row2].style.backgroundColor == "green"){
+                    if(tiles[4].style.backgroundColor != "green"){
+                        row2--;
+                    }
+                    for(let l = 0; l < 5;l++){
+                        if(tiles[row2].style.backgroundColor == "green" && row2 != 4){
+                        row2--}
+                    }
+                    if(row2 == 4){row2++}
                 }
+
                 if(tiles[row2].style.backgroundColor != "green"){
                     tiles[row2].textContent = ""
                 }
-                row2--
+                if(tiles[row2].classList.contains("AnInput")){
+                    tiles[row2].classList.remove("AnInput")
+                }
+
+
+                if(tiles[row2].style.backgroundColor != "green"){
+                    row2--;
+                }
             }
             tileComplete = false
+
         } else {
             if(!tileComplete){
                 if(row2 < 9){
-                    row2++;
+                    if(tiles[row2+1].style.backgroundColor == "green"){
+                        row2++
+                        for(let l=0; tiles[row2].style.backgroundColor == "green"; l++){
+                            row2++
+                        }
+                        if(row2 == 10){row2--}
+                    } else{ 
+                            if(tiles[row2+1].style.backgroundColor != "green"){
+                                row2++
+                            }
+                        } 
+                    }
+
                     if(tiles[row2].style.backgroundColor != "green"){
                         tiles[row2].textContent = key.toUpperCase()
                         tiles[row2].classList.add("AnInput")
                     }
                 }
             }
-        }
     } else if(row == 3){
         if(key === "Backspace" && row3 >= 9){
             if(row3 != 9){
-                if(tiles[row3].classList.contains("AnInput")){
-                    tiles[row3].classList.remove("AnInput")
+                
+                if(tiles[row3].style.backgroundColor == "green"){
+                    if(tiles[9].style.backgroundColor != "green"){
+                        row3--;
+                    }
+                    for(let l = 0; l < 5;l++){
+                        if(tiles[row3].style.backgroundColor == "green" && row3 != 9){
+                        row3--}
+                    }
+                    if(row3 == 9){row3++}
                 }
+
                 if(tiles[row3].style.backgroundColor != "green"){
                     tiles[row3].textContent = ""
                 }
-                row3--
+                if(tiles[row3].classList.contains("AnInput")){
+                    tiles[row3].classList.remove("AnInput")
+                }
+
+
+                if(tiles[row3].style.backgroundColor != "green"){
+                    row3--;
+                }
             }
             tileComplete = false
+
         } else {
             if(!tileComplete){
                 if(row3 < 14){
-                    row3++;
+                    if(tiles[row3+1].style.backgroundColor == "green"){
+                        row3++
+                        for(let l=0; tiles[row3].style.backgroundColor == "green"; l++){
+                            row3++
+                        }
+                        if(row3 == 15){row3--}
+                    } else{ 
+                            if(tiles[row3+1].style.backgroundColor != "green"){
+                                row3++
+                            }
+                        } 
+                    }
+
                     if(tiles[row3].style.backgroundColor != "green"){
                         tiles[row3].textContent = key.toUpperCase()
                         tiles[row3].classList.add("AnInput")
                     }
                 }
             }
-        }
     } else if(row == 4){
         if(key === "Backspace" && row4 >= 14){
             if(row4 != 14){
-                if(tiles[row4].classList.contains("AnInput")){
-                    tiles[row4].classList.remove("AnInput")
+                
+                if(tiles[row4].style.backgroundColor == "green"){
+                    if(tiles[14].style.backgroundColor != "green"){
+                        row4--;
+                    }
+                    for(let l = 0; l < 5;l++){
+                        if(tiles[row4].style.backgroundColor == "green" && row4 != 14){
+                        row4--}
+                    }
+                    if(row4 == 14){row4++}
                 }
+
                 if(tiles[row4].style.backgroundColor != "green"){
                     tiles[row4].textContent = ""
                 }
-                row4--
+                if(tiles[row4].classList.contains("AnInput")){
+                    tiles[row4].classList.remove("AnInput")
+                }
+
+
+                if(tiles[row4].style.backgroundColor != "green"){
+                    row4--;
+                }
             }
             tileComplete = false
+
         } else {
             if(!tileComplete){
                 if(row4 < 19){
-                    row4++;
+                    if(tiles[row4+1].style.backgroundColor == "green"){
+                        row4++
+                        for(let l=0; tiles[row4].style.backgroundColor == "green"; l++){
+                            row4++
+                        }
+                        if(row4 == 20){row4--}
+                    } else{ 
+                            if(tiles[row4+1].style.backgroundColor != "green"){
+                                row4++
+                            }
+                        } 
+                    }
+
                     if(tiles[row4].style.backgroundColor != "green"){
                         tiles[row4].textContent = key.toUpperCase()
                         tiles[row4].classList.add("AnInput")
                     }
                 }
             }
-        }
     } else if(row == 5){
         if(key === "Backspace" && row5 >= 19){
             if(row5 != 19){
-                if(tiles[row5].classList.contains("AnInput")){
-                    tiles[row5].classList.remove("AnInput")
+                
+                if(tiles[row5].style.backgroundColor == "green"){
+                    if(tiles[19].style.backgroundColor != "green"){
+                        row5--;
+                    }
+                    for(let l = 0; l < 5;l++){
+                        if(tiles[row5].style.backgroundColor == "green" && row5 != 19){
+                        row5--}
+                    }
+                    if(row5 == 19){row5++}
                 }
+
                 if(tiles[row5].style.backgroundColor != "green"){
                     tiles[row5].textContent = ""
                 }
-                row5--
+                if(tiles[row5].classList.contains("AnInput")){
+                    tiles[row5].classList.remove("AnInput")
+                }
+
+
+                if(tiles[row5].style.backgroundColor != "green"){
+                    row5--;
+                }
             }
             tileComplete = false
+
         } else {
             if(!tileComplete){
                 if(row5 < 24){
-                    row5++;
-                    
+                    if(tiles[row5+1].style.backgroundColor == "green"){
+                        row5++
+                        for(let l=0; tiles[row5].style.backgroundColor == "green"; l++){
+                            row5++
+                        }
+                        if(row5 == 25){row5--}
+                    } else{ 
+                            if(tiles[row5+1].style.backgroundColor != "green"){
+                                row5++
+                            }
+                        } 
+                    }
+
                     if(tiles[row5].style.backgroundColor != "green"){
                         tiles[row5].textContent = key.toUpperCase()
                         tiles[row5].classList.add("AnInput")
                     }
                 }
             }
-        }
     } else if(row == 6){
         if(key === "Backspace" && row6 >= 24){
             if(row6 != 24){
-                if(tiles[row6].classList.contains("AnInput")){
-                    tiles[row6].classList.remove("AnInput")
+                
+                if(tiles[row6].style.backgroundColor == "green"){
+                    if(tiles[24].style.backgroundColor != "green"){
+                        row6--;
+                    }
+                    for(let l = 0; l < 5;l++){
+                        if(tiles[row6].style.backgroundColor == "green" && row6 != 29){
+                        row6--}
+                    }
+                    if(row6 == 24){row6++}
                 }
+
                 if(tiles[row6].style.backgroundColor != "green"){
                     tiles[row6].textContent = ""
                 }
-                row6--
+                if(tiles[row6].classList.contains("AnInput")){
+                    tiles[row6].classList.remove("AnInput")
+                }
+
+
+                if(tiles[row6].style.backgroundColor != "green"){
+                    row6--;
+                }
             }
             tileComplete = false
+
         } else {
             if(!tileComplete){
                 if(row6 < 29){
-                    row6++;
+                    if(tiles[row6+1].style.backgroundColor == "green"){
+                        row6++
+                        for(let l=0; tiles[row6].style.backgroundColor == "green"; l++){
+                            row6++
+                        }
+                        if(row6 == 30){row6--}
+                    } else{ 
+                            if(tiles[row6+1].style.backgroundColor != "green"){
+                                row6++
+                            }
+                        } 
+                    }
+
                     if(tiles[row6].style.backgroundColor != "green"){
                         tiles[row6].textContent = key.toUpperCase()
                         tiles[row6].classList.add("AnInput")
                     }
                 }
             }
-        }
     }
 }
 window.addEventListener('keyup', (e) => {
@@ -330,142 +496,308 @@ window.addEventListener('keyup', (e) => {
                 if(row == 1){
                     if(e.key === "Backspace" && row1 >= -1){
                         if(row1 != -1){
+                            
+                            if(tiles[row1].style.backgroundColor == "green"){
+                                if(tiles[0].style.backgroundColor != "green"){
+                                    row1--;
+                                }
+                                for(let l = 0; l < 5;l++){
+                                    if(tiles[row1].style.backgroundColor == "green" && row1 !=0){
+                                    row1--}
+                                }
+                            }
+            
                             if(tiles[row1].style.backgroundColor != "green"){
                                 tiles[row1].textContent = ""
                             }
                             if(tiles[row1].classList.contains("AnInput")){
                                 tiles[row1].classList.remove("AnInput")
                             }
-                            row1--
+            
+            
+                            if(tiles[row1].style.backgroundColor != "green"){
+                                row1--;
+                            }
                         }
                         tileComplete = false
+            
                     } else {
                         if(!tileComplete){
                             if(row1 < 4){
-                                row1++
+                                if(tiles[row1+1].style.backgroundColor == "green"){
+                                    row1++
+                                    for(let l=0; tiles[row1].style.backgroundColor == "green"; l++){
+                                        row1++
+                                    }
+                                    if(row1 == 5){row1--}
+                                } else{ 
+                                        if(tiles[row1+1].style.backgroundColor != "green"){
+                                            row1++
+                                        }
+                                    } 
+                                }
+            
                                 if(tiles[row1].style.backgroundColor != "green"){
                                     tiles[row1].textContent = e.key.toUpperCase()
                                     tiles[row1].classList.add("AnInput")
                                 }
-                                
                             }
                         }
-                    }
                 } else if(row == 2){
                     if(e.key === "Backspace" && row2 >= 4){
                         if(row2 != 4){
-                            if(tiles[row2].classList.contains("AnInput")){
-                                tiles[row2].classList.remove("AnInput")
+                            
+                            if(tiles[row2].style.backgroundColor == "green"){
+                                if(tiles[4].style.backgroundColor != "green"){
+                                    row2--;
+                                }
+                                for(let l = 0; l < 5;l++){
+                                    if(tiles[row2].style.backgroundColor == "green" && row2 != 4){
+                                    row2--}
+                                }
+                                if(row2 == 4){row2++}
                             }
+            
                             if(tiles[row2].style.backgroundColor != "green"){
                                 tiles[row2].textContent = ""
                             }
-                            row2--
+                            if(tiles[row2].classList.contains("AnInput")){
+                                tiles[row2].classList.remove("AnInput")
+                            }
+            
+            
+                            if(tiles[row2].style.backgroundColor != "green"){
+                                row2--;
+                            }
                         }
                         tileComplete = false
+            
                     } else {
                         if(!tileComplete){
                             if(row2 < 9){
-                                row2++;
-                                if(tiles[row2].style.backgroundColor != "green"){    
+                                if(tiles[row2+1].style.backgroundColor == "green"){
+                                    row2++
+                                    for(let l=0; tiles[row2].style.backgroundColor == "green"; l++){
+                                        row2++
+                                    }
+                                    if(row2 == 10){row2--}
+                                } else{ 
+                                        if(tiles[row2+1].style.backgroundColor != "green"){
+                                            row2++
+                                        }
+                                    } 
+                                }
+            
+                                if(tiles[row2].style.backgroundColor != "green"){
                                     tiles[row2].textContent = e.key.toUpperCase()
                                     tiles[row2].classList.add("AnInput")
                                 }
                             }
                         }
-                    }
                 } else if(row == 3){
                     if(e.key === "Backspace" && row3 >= 9){
                         if(row3 != 9){
-                            if(tiles[row3].classList.contains("AnInput")){
-                                tiles[row3].classList.remove("AnInput")
+                            
+                            if(tiles[row3].style.backgroundColor == "green"){
+                                if(tiles[9].style.backgroundColor != "green"){
+                                    row3--;
+                                }
+                                for(let l = 0; l < 5;l++){
+                                    if(tiles[row3].style.backgroundColor == "green" && row3 != 9){
+                                    row3--}
+                                }
+                                if(row3 == 9){row3++}
                             }
+            
                             if(tiles[row3].style.backgroundColor != "green"){
                                 tiles[row3].textContent = ""
                             }
-                            row3--
+                            if(tiles[row3].classList.contains("AnInput")){
+                                tiles[row3].classList.remove("AnInput")
+                            }
+            
+            
+                            if(tiles[row3].style.backgroundColor != "green"){
+                                row3--;
+                            }
                         }
                         tileComplete = false
+            
                     } else {
                         if(!tileComplete){
                             if(row3 < 14){
-                                row3++;
+                                if(tiles[row3+1].style.backgroundColor == "green"){
+                                    row3++
+                                    for(let l=0; tiles[row3].style.backgroundColor == "green"; l++){
+                                        row3++
+                                    }
+                                    if(row3 == 15){row3--}
+                                } else{ 
+                                        if(tiles[row3+1].style.backgroundColor != "green"){
+                                            row3++
+                                        }
+                                    } 
+                                }
+            
                                 if(tiles[row3].style.backgroundColor != "green"){
                                     tiles[row3].textContent = e.key.toUpperCase()
                                     tiles[row3].classList.add("AnInput")
                                 }
                             }
                         }
-                    }
                 } else if(row == 4){
                     if(e.key === "Backspace" && row4 >= 14){
                         if(row4 != 14){
-                            if(tiles[row4].classList.contains("AnInput")){
-                                tiles[row4].classList.remove("AnInput")
+                            
+                            if(tiles[row4].style.backgroundColor == "green"){
+                                if(tiles[14].style.backgroundColor != "green"){
+                                    row4--;
+                                }
+                                for(let l = 0; l < 5;l++){
+                                    if(tiles[row4].style.backgroundColor == "green" && row4 != 14){
+                                    row4--}
+                                }
+                                if(row4 == 14){row4++}
                             }
+            
                             if(tiles[row4].style.backgroundColor != "green"){
                                 tiles[row4].textContent = ""
                             }
-                            row4--
+                            if(tiles[row4].classList.contains("AnInput")){
+                                tiles[row4].classList.remove("AnInput")
+                            }
+            
+            
+                            if(tiles[row4].style.backgroundColor != "green"){
+                                row4--;
+                            }
                         }
                         tileComplete = false
+            
                     } else {
                         if(!tileComplete){
                             if(row4 < 19){
-                                row4++;
+                                if(tiles[row4+1].style.backgroundColor == "green"){
+                                    row4++
+                                    for(let l=0; tiles[row4].style.backgroundColor == "green"; l++){
+                                        row4++
+                                    }
+                                    if(row4 == 20){row4--}
+                                } else{ 
+                                        if(tiles[row4+1].style.backgroundColor != "green"){
+                                            row4++
+                                        }
+                                    } 
+                                }
+            
                                 if(tiles[row4].style.backgroundColor != "green"){
                                     tiles[row4].textContent = e.key.toUpperCase()
                                     tiles[row4].classList.add("AnInput")
                                 }
                             }
                         }
-                    }
                 } else if(row == 5){
                     if(e.key === "Backspace" && row5 >= 19){
                         if(row5 != 19){
-                            if(tiles[row5].classList.contains("AnInput")){
-                                tiles[row5].classList.remove("AnInput")
+                            
+                            if(tiles[row5].style.backgroundColor == "green"){
+                                if(tiles[19].style.backgroundColor != "green"){
+                                    row5--;
+                                }
+                                for(let l = 0; l < 5;l++){
+                                    if(tiles[row5].style.backgroundColor == "green" && row5 != 19){
+                                    row5--}
+                                }
+                                if(row5 == 19){row5++}
                             }
+            
                             if(tiles[row5].style.backgroundColor != "green"){
                                 tiles[row5].textContent = ""
                             }
-                            row5--
+                            if(tiles[row5].classList.contains("AnInput")){
+                                tiles[row5].classList.remove("AnInput")
+                            }
+            
+            
+                            if(tiles[row5].style.backgroundColor != "green"){
+                                row5--;
+                            }
                         }
                         tileComplete = false
+            
                     } else {
                         if(!tileComplete){
                             if(row5 < 24){
-                                row5++;
+                                if(tiles[row5+1].style.backgroundColor == "green"){
+                                    row5++
+                                    for(let l=0; tiles[row5].style.backgroundColor == "green"; l++){
+                                        row5++
+                                    }
+                                    if(row5 == 25){row5--}
+                                } else{ 
+                                        if(tiles[row5+1].style.backgroundColor != "green"){
+                                            row5++
+                                        }
+                                    } 
+                                }
+            
                                 if(tiles[row5].style.backgroundColor != "green"){
                                     tiles[row5].textContent = e.key.toUpperCase()
                                     tiles[row5].classList.add("AnInput")
                                 }
                             }
                         }
-                    }
                 } else if(row == 6){
                     if(e.key === "Backspace" && row6 >= 24){
                         if(row6 != 24){
-                            if(tiles[row6].classList.contains("AnInput")){
-                                tiles[row6].classList.remove("AnInput")
+                            
+                            if(tiles[row6].style.backgroundColor == "green"){
+                                if(tiles[24].style.backgroundColor != "green"){
+                                    row6--;
+                                }
+                                for(let l = 0; l < 5;l++){
+                                    if(tiles[row6].style.backgroundColor == "green" && row6 != 29){
+                                    row6--}
+                                }
+                                if(row6 == 24){row6++}
                             }
+            
                             if(tiles[row6].style.backgroundColor != "green"){
                                 tiles[row6].textContent = ""
                             }
-                            row6--
+                            if(tiles[row6].classList.contains("AnInput")){
+                                tiles[row6].classList.remove("AnInput")
+                            }
+            
+            
+                            if(tiles[row6].style.backgroundColor != "green"){
+                                row6--;
+                            }
                         }
                         tileComplete = false
+            
                     } else {
                         if(!tileComplete){
                             if(row6 < 29){
-                                row6++;
+                                if(tiles[row6+1].style.backgroundColor == "green"){
+                                    row6++
+                                    for(let l=0; tiles[row6].style.backgroundColor == "green"; l++){
+                                        row6++
+                                    }
+                                    if(row6 == 30){row6--}
+                                } else{ 
+                                        if(tiles[row6+1].style.backgroundColor != "green"){
+                                            row6++
+                                        }
+                                    } 
+                                }
+            
                                 if(tiles[row6].style.backgroundColor != "green"){
                                     tiles[row6].textContent = e.key.toUpperCase()
                                     tiles[row6].classList.add("AnInput")
                                 }
                             }
                         }
-                    }
                 }
             }
         }
