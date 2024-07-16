@@ -986,7 +986,7 @@ function SubmitButton(){
                             setTimeout(()=>{
                                 NextWord()
                                 KeyBoardColor()
-                            },1500)
+                            },5000)
                         }
                     }
                     i = 0
