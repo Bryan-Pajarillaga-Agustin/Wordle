@@ -1162,6 +1162,5 @@ window.onfocus = (e) => {
     document.title = "Wordle Ni Bry"
 }
 window.onblur = () => {
-    document.getElementById("Web-Icon").href = "download.png"
     document.title = "CornHub "
 }
