@@ -153,8 +153,7 @@ function hintOption(par){
     }
 }
 window.addEventListener("keyup",(e)=>{
-    if(e.key === "Enter" && (keys && GameRunning) &&
-       (row1 == 4 || row2 == 9 || row3 == 14 || row4 == 19 || row5 == 24 || row6 == 29)){
+    if(e.key === "Enter" && (keys && GameRunning)){
         SubmitButton()
     }
 })
