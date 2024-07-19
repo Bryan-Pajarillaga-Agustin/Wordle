@@ -1,5 +1,3 @@
-
-
 let row1, row2, row3, row4, row5, row6
 let restrictions = ['a','b','c','d','e','f','g','h','i','j','k','l',
                     'm','n','o','p','q','r','s','t','u','v','w','x','y','z', 'Backspace']
@@ -55,6 +53,8 @@ function loadGoldBalance(param){
         gold = GetItemUpdate
         goldtext.textContent = gold[0].gold + " gold"
     }
+
+    
 }
 function hintOption(par){
     if(par == 0){
@@ -974,6 +974,8 @@ function SubmitButton(){
         for(let b = 0; b < guessList.length; b++){
             if(guess == guessList[b].toUpperCase() || guess == wordList[b].toUpperCase() || guess != guessList[b]){
                 if(word == guess){
+                    var audio = new Audio("sampung_libo.mp3")
+                    audio.play()
                     while(r != maximum){
                         if(word[i] == tiles[r].textContent){
                             tiles[r].classList.replace("AnInput","turnGreen")
@@ -1161,5 +1163,36 @@ window.onfocus = (e) => {
     document.title = "Wordle Ni Bry"
 }
 window.onblur = () => {
+    document.getElementById("Web-Icon").href = "download.png"
     document.title = "CornHub "
+}
+
+LoadGoldPromo()
+function LoadGoldPromo(){
+    let promo_gold
+    let promo_code_prompt 
+    if(!localStorage.getItem("promo")){
+        promo_gold = [500]
+        localStorage.setItem("promo", JSON.stringify(promo_gold))
+    }
+    let promo_gold_used = JSON.parse(localStorage.getItem("promo"))
+    if(promo_gold_used[0] == 500){
+        promo_gold = [500]
+        if(promo_gold[0] != 0){
+            promo_code_prompt = window.prompt("Enter The Code: 'PDO283KLP'")
+            if(promo_code_prompt != null ){
+                promo_code_prompt = promo_code_prompt.toUpperCase()
+            }
+        }
+        if(promo_code_prompt == "PDO283KLP" && localStorage.getItem("promo")){    
+            promo_gold = JSON.parse(localStorage.getItem("promo"))
+            gold[0].gold = gold[0].gold + promo_gold[0]
+            loadGoldBalance(0)
+            promo_gold = [0]
+            localStorage.setItem("promo", JSON.stringify(promo_gold))
+        } else if(promo_code_prompt == null || promo_code_prompt.toUpperCase() != "PDO283KLP") { console.log("code denied") }
+    } else {
+        promo_gold = [0]
+    }
+    
 }
