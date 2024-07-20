@@ -974,8 +974,6 @@ function SubmitButton(){
         for(let b = 0; b < guessList.length; b++){
             if(guess == guessList[b].toUpperCase() || guess == wordList[b].toUpperCase() || guess != guessList[b]){
                 if(word == guess){
-                    var audio = new Audio("sampung_libo.mp3")
-                    audio.play()
                     while(r != maximum){
                         if(word[i] == tiles[r].textContent){
                             tiles[r].classList.replace("AnInput","turnGreen")
