@@ -911,8 +911,9 @@ function SubmitButton(){
             for(let i = 25; i < 30; i++){
                 guess += tiles[i].textContent
             }
-            checkAnswerPerTile(6)
             gameOver()
+            checkAnswerPerTile(6)
+            
     }  
 
 
@@ -1129,7 +1130,7 @@ function gameOver(){
     }
         
     setTimeout(() => {
-        if(!GameRunning && !keys){
+        if(!GameRunning && !keys && guess != word){
             document.body.style.opacity = ".5"
             document.getElementsByClassName("startButton")[0].style.display = "block"
             document.getElementsByClassName("startButton")[0].style.opacity = "1"
