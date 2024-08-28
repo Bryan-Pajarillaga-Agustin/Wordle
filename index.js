@@ -50,13 +50,11 @@ function loadGoldBalance(param){
         }
     } else if(param == 0){
         var ToStringUpdate = JSON.stringify(gold)
-        localStorage.setItem("gold_data", ToStringUpdate)
-        var GetItemUpdate = JSON.parse(localStorage.getItem("gold_data"))
+        localStorage.setItem("data", ToStringUpdate)
+        var GetItemUpdate = JSON.parse(localStorage.getItem("data"))
         gold = GetItemUpdate
         goldtext.textContent = gold[0].gold + " gold"
     }
-
-    
 }
 function hintOption(par){
     if(par == 0){
@@ -1169,28 +1167,32 @@ window.onblur = () => {
 
 LoadGoldPromo()
 function LoadGoldPromo(){
+	let PromoGold = localStorage.getItem("promo")
+
     let promo_gold
     let promo_code_prompt 
-    if(!localStorage.getItem("promo")){
+    if(!PromoGold){
         promo_gold = [500]
         localStorage.setItem("promo", JSON.stringify(promo_gold))
     }
     let promo_gold_used = JSON.parse(localStorage.getItem("promo"))
     if(promo_gold_used[0] == 500){
         promo_gold = [500]
+
         if(promo_gold[0] != 0){
             promo_code_prompt = window.prompt("Enter The Code: 'PDO283KLP'")
             if(promo_code_prompt != null ){
                 promo_code_prompt = promo_code_prompt.toUpperCase()
             }
         }
-        if(promo_code_prompt == "PDO283KLP" && localStorage.getItem("promo")){    
+
+        if(promo_code_prompt == "PDO283KLP" && {PromoGold}){    
             promo_gold = JSON.parse(localStorage.getItem("promo"))
             gold[0].gold = gold[0].gold + promo_gold[0]
             loadGoldBalance(0)
             promo_gold = [0]
             localStorage.setItem("promo", JSON.stringify(promo_gold))
-        } else if(promo_code_prompt == null || promo_code_prompt.toUpperCase() != "PDO283KLP") { console.log("code denied") }
+        } else if (promo_code_prompt == null || promo_code_prompt.toUpperCase() != "PDO283KLP") { console.log("code denied") }
     } else {
         promo_gold = [0]
     }
