@@ -34,22 +34,22 @@ function Hint(){
 }
 function loadGoldBalance(param){
     if(param == 1){
-        if(localStorage.length == 0){
+        if(localStorage.getItem("gold_data")){
             gold = [{gold: 25}]
             var ToString = JSON.stringify(gold)
-            localStorage.setItem("data", ToString)
-            var GetItem = JSON.parse(localStorage.getItem("data"))
+            localStorage.setItem("gold_data", ToString)
+            var GetItem = JSON.parse(localStorage.getItem("gold_data"))
             gold = GetItem
             goldtext.textContent = gold[0].gold + " gold"
         } else {
-            var GetItem2 = JSON.parse(localStorage.getItem("data"))
+            var GetItem2 = JSON.parse(localStorage.getItem("gold_data"))
             gold = GetItem2
             goldtext.textContent = gold[0].gold + " gold"
         }
     } else if(param == 0){
         var ToStringUpdate = JSON.stringify(gold)
-        localStorage.setItem("data", ToStringUpdate)
-        var GetItemUpdate = JSON.parse(localStorage.getItem("data"))
+        localStorage.setItem("gold_data", ToStringUpdate)
+        var GetItemUpdate = JSON.parse(localStorage.getItem("gold_data"))
         gold = GetItemUpdate
         goldtext.textContent = gold[0].gold + " gold"
     }
