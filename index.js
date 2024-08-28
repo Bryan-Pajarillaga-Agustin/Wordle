@@ -33,8 +33,10 @@ function Hint(){
     
 }
 function loadGoldBalance(param){
+  var gold_data = localStorage.getItem("gold_data")
+  
     if(param == 1){
-        if(localStorage.getItem("gold_data")){
+        if(gold_data){
             gold = [{gold: 25}]
             var ToString = JSON.stringify(gold)
             localStorage.setItem("gold_data", ToString)
